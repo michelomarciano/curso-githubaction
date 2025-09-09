@@ -1,13 +1,7 @@
-name: Evento de PullRequest
 
-on:
-  push:
-   branches:
-      - develop
-      - 'feature/**'
-  pull_request:
-    branches:
-      -main
+name: Evento de PullRequest #Opcional - O nome do fluxo de trabalho como aparecerá na aba "Ações" do repositório do GitHub. Se este campo for omitido, o nome do arquivo do fluxo de trabalho será usado.
+run-name: ${{ github.actor }} is learning GitHub Actions #Opcional - O nome para as execuções de fluxo de trabalho geradas a partir do fluxo de trabalho, que aparecerá na lista de execuções de fluxo de trabalho na aba "Ações" do seu repositório. Este exemplo usa uma expressão com o githubcontexto para exibir o nome de usuário do ator que acionou a execução do fluxo de trabalho. Para obter mais informações, consulte Sintaxe de fluxo de trabalho para ações do GitHub .
+on: [push] #Especifica o gatilho para este fluxo de trabalho. Este exemplo usa o pushevento, portanto, uma execução de fluxo de trabalho é acionada sempre que alguém envia uma alteração para o repositório ou mescla um pull request. Isso é acionado por um push para cada branch; para exemplos de sintaxe que são executados apenas em pushes para branches, caminhos ou tags específicos, consulte Sintaxe de fluxo de trabalho para GitHub Actions .
 jobs:
   my_job:
     name: deploy to staging
