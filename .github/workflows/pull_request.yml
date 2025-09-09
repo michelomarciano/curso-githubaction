@@ -2,7 +2,9 @@
 name: Evento de PullRequest #Opcional - O nome do fluxo de trabalho como aparecerá na aba "Ações" do repositório do GitHub. Se este campo for omitido, o nome do arquivo do fluxo de trabalho será usado.
 run-name: ${{ github.actor }} is learning GitHub Actions #Opcional - O nome para as execuções de fluxo de trabalho geradas a partir do fluxo de trabalho, que aparecerá na lista de execuções de fluxo de trabalho na aba "Ações" do seu repositório. Este exemplo usa uma expressão com o githubcontexto para exibir o nome de usuário do ator que acionou a execução do fluxo de trabalho. Para obter mais informações, consulte Sintaxe de fluxo de trabalho para ações do GitHub .
 on: [push] #Especifica o gatilho para este fluxo de trabalho. Este exemplo usa o pushevento, portanto, uma execução de fluxo de trabalho é acionada sempre que alguém envia uma alteração para o repositório ou mescla um pull request. Isso é acionado por um push para cada branch; para exemplos de sintaxe que são executados apenas em pushes para branches, caminhos ou tags específicos, consulte Sintaxe de fluxo de trabalho para GitHub Actions .
-jobs:
-  my_job:
-    name: deploy to staging
-    runs-on: ubuntu-22.04
+jobs: #Agrupa todos os trabalhos executados no learn-github-actionsfluxo de trabalho.
+  check-bats-version: #Define um trabalho chamado check-bats-version. As chaves filhas definirão as propriedades do trabalho.
+    name: deploy to staging ##Opcional - O nome do fluxo de trabalho como aparecerá na aba "Ações" do repositório do GitHub. Se este campo for omitido, o nome do arquivo do fluxo de trabalho será usado.
+    runs-on: ubuntu-latest #Configura o trabalho para ser executado na versão mais recente de um executor do Ubuntu Linux. Isso significa que o trabalho será executado em uma máquina virtual nova hospedada pelo GitHub. Para exemplos de sintaxe usando outros executores, consulte Sintaxe de fluxo de trabalho para ações do GitHub.
+    steps: #Agrupa todas as etapas executadas no check-bats-versiontrabalho. Cada item aninhado nesta seção é uma ação ou script de shell separado.
+      - uses: actions/checkout@v5 #A usespalavra-chave especifica que esta etapa executará v4a actions/checkoutação. Esta é uma ação que verifica seu repositório no executor, permitindo que você execute scripts ou outras ações em seu código (como ferramentas de compilação e teste). Você deve usar a ação de verificação sempre que seu fluxo de trabalho usar o código do repositório.
