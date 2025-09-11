@@ -1,5 +1,5 @@
 #Documentaçao oficial
-name: docker-login #O nome do fluxo de trabalho. O GitHub exibe os nomes dos seus fluxos de trabalho na aba "Ações" do seu repositório. Se você omitir name, o GitHub exibirá o caminho do arquivo do fluxo de trabalho relativo à raiz do repositório.
+name: docker-login  #O nome do fluxo de trabalho. O GitHub exibe os nomes dos seus fluxos de trabalho na aba "Ações" do seu repositório. Se você omitir name, o GitHub exibirá o caminho do arquivo do fluxo de trabalho relativo à raiz do repositório.
 run-name: Login Docker by @${{ github.actor }} #O nome para execuções de fluxo de trabalho geradas a partir do fluxo de trabalho. O GitHub exibe o nome da execução do fluxo de trabalho na lista de execuções de fluxo de trabalho na aba "Ações" do seu repositório. Se run-namefor omitido ou contiver apenas espaços em branco, o nome da execução será definido com informações específicas do evento para a execução do fluxo de trabalho. Por exemplo, para um fluxo de trabalho acionado por um evento pushou pull_request, ele será definido como a mensagem de commit ou o título do pull request.
 
 on: #Para acionar um fluxo de trabalho automaticamente, use onpara definir quais eventos podem acionar a execução do fluxo de trabalho. Para obter uma lista de eventos disponíveis, consulte Eventos que acionam fluxos de trabalho .
