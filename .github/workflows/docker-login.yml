@@ -7,6 +7,9 @@ on: #Para acionar um fluxo de trabalho automaticamente, use onpara definir quais
     branches: main #Set your workflow to run on push events to the main
   pull_request: #Set your workflow to run on pull_request events that target the main branch
     branches: [main]
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true          
 
 jobs:
   login:
@@ -17,6 +20,4 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }
-concurrency:
-  group: ${{ github.ref }}
-  cancel-in-progress: true      
+
