@@ -1,7 +1,0 @@
-name: Testes de CI/CD
-
-on:
-  push:
-    branches:
-      - main
-      - 'releases/**'
