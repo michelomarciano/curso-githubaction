@@ -1,4 +1,4 @@
-name: Example Run
+name: Examplo Execucao Manual
 on: workflow_dispatch
 jobs:
   first-job:
