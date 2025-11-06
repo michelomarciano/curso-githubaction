@@ -1,0 +1,7 @@
+name: Event Push
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get  project
