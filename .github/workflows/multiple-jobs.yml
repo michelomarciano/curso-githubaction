@@ -1,4 +1,4 @@
-name: Examplo multiplos jobs
+name: Exemplo multiplos jobs
 on: push
 jobs:
   test:
